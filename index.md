@@ -147,11 +147,37 @@
     its two-branch architecture and attention scheme.  
     The U-PA block combines the nearest-neighbor upsampling, convolution and PA layers.
     It improves the final reconstruction quality with little parameter cost.  
+    The main contributions are following:  
+    1. The paper proposes a simple and fundamental attention scheme – pixel attention(PA),
+       which is demonstrated effective in lightweight SR networks.
+    2. The paper integrates pixel attention and Self-Calibrated convolution in a new 
+       building block – SC-PA, which is efficient and constructive.
+    3. The paper employs pixel attention in the reconstruction branch and proposes a U-PA 
+       block. Note that few studies have investigated attention schemes after upsampling.
     ![img_16.png](img_16.png)
+    ![img_17.png](img_17.png)
 
 15. Residual Non-local Attention Networks for Image Restoration  
+    Previous methods are restricted by local convolutional operation and 
+    channel-wise or spatial attention schema.
+    To address this issue, the paper designs local and non-local attention blocks to 
+    extraact features that capture the long-range dependencies between pixels.  
+    Specifically, we design trunk branch and (non-)local mask branch in each 
+    (non-)local attention block.  
+    Three issues are found following:  
+    1. the receptive field size of previous networks are relatively small
+    2. distinctive ability of these networks is also limited
+    3. all channel-wise features are treated equally  
     
-16. Single Image Super-Resolution via a Holistic Attention Network
+    So the paper makes three main contributions following:
+    1. propose a very deep residual non-local networks
+    2. propose residual non-local attention learning to train very deep networks by
+       preserving more low-level features
+    3. demonstrate with extensive experiments that our RNAN is powerful for various image
+       restoration tasks
+       
+    ![img_18.png](img_18.png)
+16. Single Image Super-Resolution via a Holistic Attention Network  
 
 17. Non-Local Recurrent Network for Image Restoration
     
