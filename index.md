@@ -161,7 +161,7 @@
     Previous methods are restricted by local convolutional operation and 
     channel-wise or spatial attention schema.
     To address this issue, the paper designs local and non-local attention blocks to 
-    extraact features that capture the long-range dependencies between pixels.  
+    extract features that capture the long-range dependencies between pixels.  
     Specifically, we design trunk branch and (non-)local mask branch in each 
     (non-)local attention block.  
     Three issues are found following:  
@@ -177,8 +177,33 @@
        restoration tasks
        
     ![img_18.png](img_18.png)
+    ![img_19.png](img_19.png)
 16. Single Image Super-Resolution via a Holistic Attention Network  
-
-17. Non-Local Recurrent Network for Image Restoration
-    
-18. Cross-Scale Internal Graph Neural Network for Image Super-Resolution
+    Previous channel attention networks treat each convolution layer as a separate process
+    that misses the correlation among different layers.To address this problem, the paper
+    proposes a new holistic attention network(HAN) with layer attention modules(LAM) and
+    channel-spatial attention modules(CSAM).  
+    The main contributions are followings:
+    1. propose a novel super-resolution algorithm named Holistic Attention Network
+    2. introduce a layer attention module(CSAM)to learn weights for hierarchical features
+    3. combine two attention modules above to improve th eST results by modeling informative
+       features among hierarchical layers, channels and positions.
+    ![img_20.png](img_20.png)
+    ![img_21.png](img_21.png)
+    ![img_22.png](img_22.png)
+17. Non-Local Recurrent Network for Image Restoration  
+    Previous the-state-of-art methods have shown non-local self-similarity in natural images
+    to be an effective prior for image restoration, but it still remains unclear and challenging
+    to make use of this intrinsic property via deep networks.
+    The paper proposes a non-local recurrent network(NLRN) as the first attempt to incorporate
+    non-local operations into a recurrent neural network(RNN) for image restoration.  
+    The main contributions are followings:
+    1. propose a non-local module that can be flexibly integrated into existing deep networks
+    for end-to-end training
+    2. fully employ the RNN structure for its parameter efficiency and allow deep features
+    correlation to be propagated along adjacent recurrent states.
+    3. show the importance to maintain a confined neighborhood for computing deep feature
+    correlation given degraded images
+       
+    ![img_23.png](img_23.png)
+18. Cross-Scale Internal Graph Neural Network for Image Super-Resolution  
