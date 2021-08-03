@@ -1,3 +1,5 @@
+# 论文笔记
+[TOC]
 1. [SRCNN: Learning a Deep Convolutional Network for Image Super-Resolution](./Image Super-Resolution Using Deep.pdf)  
     unlike traditional methods that handle each component separately,
     our method jointly optimizes all layers. Our deep CNN has a lightweight structure, yet demonstrates state-of-the-art restoration quality,  
@@ -207,3 +209,83 @@
        
     ![img_23.png](img_23.png)
 18. Cross-Scale Internal Graph Neural Network for Image Super-Resolution  
+    Previous methods only exploit similar patches within the same cale of the LR input image,
+    neglecting potential HR cues from other scales.The paper explores the cross-scale patch 
+    recurrence property of a natural image and proposes a novel cross-scale internal graph
+    neural network(IGNN).  
+    IGNN searches k-nearest neighboring patches in the downsampled LR image for each query patch
+    in the LR image. Then IGNN obtains the corresponding k HR neighboring patches and recover 
+    more details textures HR with the external information.
+    ![img_24.png](img_24.png)
+    
+19. Interpreting Super-resolution Networks with local attention maps  
+    SR networks inherit the mysterious nature of difficulty to interpret and little works 
+    makes attempt to understand them.So the paper performs attribution analysis of ST networks,
+    which aims to find the input pixels that strongly influence the SR results.  
+    The paper proposes a novel attribution approach called local attribution map(LAM),
+    which inherit the integral gradient image as the baseline input, and the other is to adopt 
+    the progressive blurring function as the path function.  
+    Based on LAM, the paper shows that:
+    1. SR networks with wider range of involved input pixels could achieve better performance.
+    2. Attention networks and non-local networks extract features from a wider range of input pixels.
+    3. Comparing with the range that actually contributes, the receptive field is large enough for most deep networks
+    4. For SR networks, textures with regular stripes or grids are more likely to be noticed, 
+       while complex semantics are difficult to utilize
+    
+    Several auxiliary principles:
+    1. the attribution should be conducted in local patches rather than global images.
+    2. analyze patches that are difficult to reconstruct
+    3. interpret the existence of specific features instead of pixel intensities
+    
+    Threefold benefits:
+    1. Understanding the mechanism that underlies these SR networks would intuitively 
+       tell us the effectiveness of the proposed method
+    2. it would also have direct consequences on designing more efficient architectures.
+    3. studying the interpretability of SR networks would also advance the science of
+       deep learning applied to low-level vision tasks.
+       
+    ![img_25.png](img_25.png)
+    ![img_26.png](img_26.png)
+20. Pre-Trained Image Processing Transformer  
+    pre-trained deep learning models (e.g., BERT, GPT-3) learned on large-scale 
+    datasets have shown their effectiveness over conventional methods.
+    So, the paper studies the low-level computer vision task (e.g., denoising, super-resolution and 
+    deraining) and develop a new pre-trained model, namely, image processing transformer (IPT)  
+    Pre-training is attractive by addressing the following 2 challenges:
+    1. task-specific data can be limited
+    2. it is unknown which type of image processing job will be requested until the test image 
+       is presented.
+       
+    IPT architecture:
+    1. __Head.__ use a multi-head architecture to deal with each task separately
+    2. __Transformer encoder__  split the given features into patches
+    3. __Transformer decoder.__  follows the same architecture and takes the output of decoder as input
+    4. __Tails.__ use multi tails to deal with different tasks
+    
+    ![img_27.png](img_27.png)
+    
+21. RAM Residual Attention Module for Single Image Super-Resolution  
+    Previous works applied Attention mechanism in the same way used in high-level CV problems
+    without much consideration of the different nature between SR and other problems. So the 
+    paper proposes Residual Attention Module(RAM) composed of CSA and fused attention.  
+    In summary, the main contributions are following:
+    1. propose two attention mechanisms (CA and SA) optimized for SR
+    2. combine the two mechanisms and propose a residual attention module (RAM) based on ResNet
+    3. build successfully both lightweight networks (aiming at efficiency) and heavy (very 
+       deep) ones (aiming at high image quality), whereas existing methods focus only on one direction.
+       
+    ![img_28.png](img_28.png)
+    ![img_29.png](img_29.png)
+    ![img_30.png](img_30.png)
+22. A Deep Convolutional Neural Network with Selection Units for Super-Resolution  
+
+23. Video Super-Resolution Transformer  
+
+24. Image Super-Resolution with Cross-Scale Non-Local Attention and Exhaustive Self-Exemplars Mining  
+
+25. Image Super-Resolution With Non-Local Sparse Attention  
+
+26. Attention in Attention Network for Image Super-Resolution  
+
+27. Pyramid Attention Networks for Image Restoration  
+
